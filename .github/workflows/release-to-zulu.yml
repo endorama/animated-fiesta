@@ -3,7 +3,7 @@ name: tag & start Zulu release process
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   tag:
