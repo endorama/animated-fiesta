@@ -9,7 +9,7 @@ jobs:
   prepare-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/debug-action@v1
+      - uses: hmarr/debug-action@v1.0.0
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: abatilo/actions-poetry@v2.0.0
@@ -34,4 +34,5 @@ jobs:
             [create-pull-request](https://github.com/peter-evans/create-pull-request).
           assignees: ${{ github.actor }}
           reviewers: ${{ github.actor }}
+          #milestone: 1
           labels: release
