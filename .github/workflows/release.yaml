@@ -15,11 +15,11 @@ jobs:
       
       - run: echo ${{ github.event }}
 
-      //- name: Install dependencies
-      //  run: poetry install
+      #- name: Install dependencies
+      #  run: poetry install
 
-      //- name: Create CHANGELOG
-      //  run: poetry run antsibull-changelog release
+      #- name: Create CHANGELOG
+      #  run: poetry run antsibull-changelog release
       
       - run: touch hello-world.txt
       - run: echo "${{ github.job }}" >> hello-world.txt
