@@ -5,7 +5,9 @@ version = "0.1.0"
 authors = ["foo"]
 
 [tool.poetry.dependencies]
-python = "^2.7"
+python = "^3.7"
+antsibull-changelog = "^0.8.1"
+jinja2 = "^2.11.2"
 
 [tool.poetry.dev-dependencies]
 
