@@ -22,10 +22,11 @@ jobs:
       - name: get version from last commit 
         id: version
         run: |
-          ver=$(git log -1 --format=%s | cut -d' ' -f 2)
+          ver=$(git log -1 --format=%s | cut -d' ' -f 3)
           echo $ver
           echo "CUSTOM_TAG=$ver" >> $GITHUB_ENV
 
+      - run: echo ${{ env.CUSTOM_TAG }}
       - run: echo ${{ env.CUSTOM_TAG }}
       
       - name: Bump version and push tag
