@@ -9,7 +9,7 @@ jobs:
   prepare-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/debug-action
+      - uses: hmarr/debug-action@v1
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: abatilo/actions-poetry@v2.0.0
