@@ -1,0 +1,36 @@
+---
+name: tag & start Zulu release process
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      
+      #- uses: actions/github-script@v3
+      #  id: set-result
+      #  with:
+      #    script: return "Hello!"
+      #    result-encoding: string
+      
+      - name: get version from last commit 
+        id: version
+        run: |
+          ver=$(git log -1 --format=%s | cut -d' ' -f 2)
+          echo $ver
+          echo "CUSTOM_TAG=$ver" >> $GITHUB_ENV
+
+      
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CUSTOM_TAG: ${{ env.CUSTOM_TAG }}
+          DRY_RUN: true
+          WITH_V: false
