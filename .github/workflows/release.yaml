@@ -35,4 +35,5 @@ jobs:
           assignees: ${{ github.actor }}
           reviewers: ${{ github.actor }}
           milestone: ${{ github.event.milestone.title }}
+          branch: "release/${{ github.event.milestone.title }}"
           labels: release
